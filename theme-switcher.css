@@ -1,0 +1,121 @@
+.switch-theme__wrapper {
+    display: flex;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    transition: all ease .2s;
+}
+
+html.light-theme .switch-theme__wrapper,
+html.dark-theme .switch-theme__wrapper {
+    visibility: visible;
+    opacity: 1;
+    width: max-content;
+}
+
+.switch-theme__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 44px;
+    padding: 0;
+    border: none !important;
+}
+
+html.light-theme .switch-theme__button:hover .theme-icon__light,
+html.dark-theme .switch-theme__button:hover .theme-icon__dark {
+	opacity: 0;
+}
+
+html.light-theme .switch-theme__button:hover .theme-icon__dark,
+html.dark-theme .switch-theme__button:hover .theme-icon__light {
+    opacity: 0.6;
+}
+
+html.light-theme .switch-theme__button:active .theme-icon__dark,
+html.dark-theme .switch-theme__button:active .theme-icon__light {
+    opacity: 1;
+}
+
+.switch-theme__button:focus {
+    box-shadow: none !important;
+}
+
+.theme-icon__light,
+.theme-icon__dark {
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all ease .4s;
+}
+
+html.light-theme .theme-icon__light,
+html.dark-theme .theme-icon__dark {
+    opacity: 1;
+}
+
+.switch-theme__reset {
+    opacity: 0;
+    visibility: hidden;
+
+    padding: 0 !important;
+    border: none !important;
+    height: 22px;
+}
+
+.switch-theme__reset.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.switch-theme__reset::before {
+	content: "x";
+	position: absolute;
+	top: 5px;
+	right: 1px;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	font-size: 10px;
+	line-height: 10px;
+	text-align: center;
+	border-radius: 100%;
+	color: var(--background-color);
+	background-color: var(--text-color);
+}
+
+.switch-theme__text {
+    font-size: 14px;
+    margin-left: 30px;
+    color: var(--text-color);
+}
+
+/* Adaptive */
+
+.switch-theme__wrapper--mobile {
+    margin-bottom: 16px;
+}
+
+.switch-theme__wrapper--mobile .switch-theme__button {
+    width: max-content;
+}
+
+.switch-theme__wrapper--mobile .theme-icon__light,
+.switch-theme__wrapper--mobile .theme-icon__dark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all ease .4s;
+}
+
+@media screen and (max-width: 990px){
+
+
+}
